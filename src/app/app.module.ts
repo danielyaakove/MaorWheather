@@ -8,16 +8,21 @@ import { StoreModule } from '@ngrx/store';
 import { ApiService } from './api/api';
 import { reducer } from '../app/wheather/state/wheather.reducer';
 import { WheatherEffects } from '../app/wheather/state/wheather.effect';
+import { HeaderComponent } from './shared/header/header.component';
+import { HomeComponent } from './shared/home/home.component';
+import { FavorietComponent } from './shared/favoriet/favoriet.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    FavorietComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule,
     StoreModule.forRoot({wheather: reducer}),
     EffectsModule.forRoot([WheatherEffects])
   ],
