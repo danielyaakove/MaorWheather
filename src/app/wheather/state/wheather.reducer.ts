@@ -17,26 +17,26 @@ const initialState: WheatherState = {
 
 export function reducer(state = initialState, action: WheatherActions): WheatherState {
   switch (action.type) {
-    case WheatherActionTypes.AddToFavoriteSuccess:
-      return {
-        ...state, favorites: state.favorites.concat(action.payload)
-      };
     case WheatherActionTypes.SearchCitySuccess:
       return {
         ...state, city: action.payload
       };
-      case WheatherActionTypes.RemoveFromFavorite:
+    case WheatherActionTypes.GetCityWheatherSuccess:
+      return {
+        ...state, city: action.payload
+      };
+      case WheatherActionTypes.Get5DaysWheatherSuccess:
+        return {
+          ...state, fiveDaysWheather: action.payload
+        };
+    case WheatherActionTypes.AddToFavoriteSuccess:
+      return {
+        ...state, favorites: state.favorites.concat(action.payload)
+      };
+    case WheatherActionTypes.RemoveFromFavorite:
       return {
         ...state, favorites: state.favorites.filter(item => item.Key !== action.payload)
       };
-      case WheatherActionTypes.SearchCitySuccess:
-        return {
-          ...state, city: action.payload
-        };
-        case WheatherActionTypes.SearchCitySuccess:
-          return {
-            ...state, city: action.payload
-          };
     default:
       return state;
   }

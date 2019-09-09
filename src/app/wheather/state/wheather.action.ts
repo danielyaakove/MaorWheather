@@ -9,10 +9,10 @@ export enum WheatherActionTypes {
   RemoveFromFavoriteSuccess = '[Wheather] remove from favorite Success',
   SearchCity = '[Wheather] search city',
   SearchCitySuccess = '[Wheather] search city Success',
-  getCityWheather = '[Wheather] get city wheather',
-  getCityWheatherSuccess = '[Wheather] get city wheather Success',
-  get5DaysWheather = '[Wheather] get 5 days wheather',
-  get5DaysWheatherSuccess = '[Wheather] get 5 days wheather Success'
+  GetCityWheather = '[Wheather] get city wheather',
+  GetCityWheatherSuccess = '[Wheather] get city wheather Success',
+  Get5DaysWheather = '[Wheather] get 5 days wheather',
+  Get5DaysWheatherSuccess = '[Wheather] get 5 days wheather Success'
 
 }
 
@@ -39,21 +39,21 @@ export class SearchCitySuccess implements Action {
   constructor(public payload: any) { }
 }
 export class GetCityWheather implements Action {
-    readonly type = WheatherActionTypes.getCityWheather;
+    readonly type = WheatherActionTypes.GetCityWheather;
     constructor(public payload: number) { }
 }
 export class GetCityWheatherSuccess implements Action {
-  readonly type = WheatherActionTypes.getCityWheather;
+  readonly type = WheatherActionTypes.GetCityWheatherSuccess;
   constructor(public payload: any) { }
 }
 export class Get5DaysWheather implements Action {
-    readonly type = WheatherActionTypes.get5DaysWheather;
+    readonly type = WheatherActionTypes.Get5DaysWheather;
     constructor(public payload: number) { }
 }
 export class Get5DaysWheatherSuccess implements Action {
-  readonly type = WheatherActionTypes.get5DaysWheather;
+  readonly type = WheatherActionTypes.Get5DaysWheatherSuccess;
   constructor(public payload: any) { }
 }
 
-export type WheatherActions = AddToFavorite | RemoveFromFavorite | SearchCity | GetCityWheather | Get5DaysWheather 
-| AddToFavoriteSuccess | SearchCitySuccess;
+export type WheatherActions = AddToFavorite | AddToFavoriteSuccess | RemoveFromFavorite | SearchCity | SearchCitySuccess | GetCityWheather
+| GetCityWheatherSuccess | Get5DaysWheather | Get5DaysWheatherSuccess;
