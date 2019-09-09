@@ -32,7 +32,7 @@ export class ApiService {
     const p = {
       apikey: this.apiKey
     };
-
+debugger
     return this.httpClient.get(this.apiBaseUrl + this.curent + key, {
       params: p
     });
@@ -42,6 +42,8 @@ export class ApiService {
     const p = {
       apikey: this.apiKey
     };
+debugger
+
     return this.httpClient.get(this.apiBaseUrl + this.fiveDays + key, {
       params: p
     });

@@ -31,7 +31,7 @@ export function reducer(state = initialState, action: WheatherActions): Wheather
           };
     case WheatherActionTypes.GetCityWheatherSuccess:
       return {
-        ...state, city: action.payload
+        ...state, currentWheather: action.payload
       };
     case WheatherActionTypes.Get5DaysWheatherSuccess:
       return {
@@ -45,6 +45,10 @@ export function reducer(state = initialState, action: WheatherActions): Wheather
       return {
         ...state, favorites: state.favorites.filter(item => item.Key !== action.payload)
       };
+      case WheatherActionTypes.SetSelectedCity:
+      return{
+        ...state, city : action.payload
+      }
     default:
       return state;
   }

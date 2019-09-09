@@ -11,7 +11,7 @@ import { WheatherEffects } from '../app/wheather/state/wheather.effect';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './shared/home/home.component';
 import { FavorietComponent } from './shared/favoriet/favoriet.component';
-
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import { FavorietComponent } from './shared/favoriet/favoriet.component';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({wheather: reducer}),
-    EffectsModule.forRoot([WheatherEffects])
+    EffectsModule.forRoot([WheatherEffects]),
+    AutocompleteLibModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

@@ -10,3 +10,20 @@ export const getsearchResult = createSelector(
     getWheatherState,
     state => state.searchResult
 );
+
+export const GetCityWheather = createSelector(
+    getWheatherState,
+    state => state.currentWheather
+);
+export const GetSelectedCity = createSelector(
+    getWheatherState,
+    state => state.city
+);
+export const GetFiveDaysWheather = createSelector(
+    getWheatherState,
+    state => state.fiveDaysWheather
+);
+export const GetFavorites = createSelector(
+    getWheatherState,
+    state => state.favorites
+);

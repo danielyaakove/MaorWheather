@@ -1,10 +1,23 @@
 <div class="topnav">
-  <a routerLink="home" routerLinkActive="router-link-active active">Home</a>
+  <div class="links">
+    <a routerLink="home" routerLinkActive="router-link-active active">Home</a>
     <a routerLink="favoriet" routerLinkActive="router-link-active active">favorites</a>
+  </div>
   <div class="search-container">
     <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <ng-autocomplete [data]="searchResultData" [searchKeyword]="keyword" placeHolder="Enter the city Name"
+        (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)' (inputFocused)='onFocused($event)'
+        historyIdentifier="countries" [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
+        minQueryLength="3" debounceTime="400">
+      </ng-autocomplete>
+
+      <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item.LocalizedName"></a>
+      </ng-template>
+
+      <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+      </ng-template>
     </form>
   </div>
 </div>
