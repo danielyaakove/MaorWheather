@@ -9,6 +9,7 @@ export enum WheatherActionTypes {
   RemoveFromFavoriteSuccess = '[Wheather] remove from favorite Success',
   SearchCity = '[Wheather] search city',
   SearchCitySuccess = '[Wheather] search city Success',
+  SearchCityFail = '[Wheather] search city Fail',
   GetCityWheather = '[Wheather] get city wheather',
   GetCityWheatherSuccess = '[Wheather] get city wheather Success',
   Get5DaysWheather = '[Wheather] get 5 days wheather',
@@ -34,6 +35,11 @@ export class SearchCity implements Action {
     readonly type = WheatherActionTypes.SearchCity;
     constructor(public payload: string) { }
 }
+export class SearchCityFail implements Action {
+  readonly type = WheatherActionTypes.SearchCityFail;
+
+  constructor(public payload: string) { }
+}
 export class SearchCitySuccess implements Action {
   readonly type = WheatherActionTypes.SearchCitySuccess;
   constructor(public payload: any) { }
@@ -55,5 +61,5 @@ export class Get5DaysWheatherSuccess implements Action {
   constructor(public payload: any) { }
 }
 
-export type WheatherActions = AddToFavorite | AddToFavoriteSuccess | RemoveFromFavorite | SearchCity | SearchCitySuccess | GetCityWheather
-| GetCityWheatherSuccess | Get5DaysWheather | Get5DaysWheatherSuccess;
+export type WheatherActions = AddToFavorite | AddToFavoriteSuccess | RemoveFromFavorite | SearchCity | SearchCityFail 
+| SearchCitySuccess | GetCityWheather| GetCityWheatherSuccess | Get5DaysWheather | Get5DaysWheatherSuccess;

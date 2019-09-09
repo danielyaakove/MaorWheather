@@ -7,28 +7,36 @@ export interface WheatherState {
   currentWheather: any;
   fiveDaysWheather: any;
   favorites: Favorite[];
+  error: any;
+  searchResult: any[];
 }
 const initialState: WheatherState = {
   city: null,
   currentWheather: null,
   fiveDaysWheather: null,
-  favorites: null
+  favorites: null,
+  error: null,
+  searchResult: []
 };
 
 export function reducer(state = initialState, action: WheatherActions): WheatherState {
   switch (action.type) {
     case WheatherActionTypes.SearchCitySuccess:
       return {
-        ...state, city: action.payload
+        ...state, searchResult: action.payload
       };
+      case WheatherActionTypes.SearchCityFail:
+          return {
+            ...state, error: action.payload
+          };
     case WheatherActionTypes.GetCityWheatherSuccess:
       return {
         ...state, city: action.payload
       };
-      case WheatherActionTypes.Get5DaysWheatherSuccess:
-        return {
-          ...state, fiveDaysWheather: action.payload
-        };
+    case WheatherActionTypes.Get5DaysWheatherSuccess:
+      return {
+        ...state, fiveDaysWheather: action.payload
+      };
     case WheatherActionTypes.AddToFavoriteSuccess:
       return {
         ...state, favorites: state.favorites.concat(action.payload)
