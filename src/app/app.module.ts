@@ -12,6 +12,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './shared/home/home.component';
 import { FavorietComponent } from './shared/favoriet/favoriet.component';
 import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import {AutocompleteLibModule} from 'angular-ng-autocomplete';
     HttpClientModule,
     StoreModule.forRoot({wheather: reducer}),
     EffectsModule.forRoot([WheatherEffects]),
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

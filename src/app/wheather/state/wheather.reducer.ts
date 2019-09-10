@@ -25,7 +25,7 @@ export function reducer(state = initialState, action: WheatherActions): Wheather
       return {
         ...state, searchResult: action.payload
       };
-      case WheatherActionTypes.SearchCityFail:
+      case WheatherActionTypes.ApiCallFail:
           return {
             ...state, error: action.payload
           };

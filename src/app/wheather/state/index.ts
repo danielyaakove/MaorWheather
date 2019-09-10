@@ -27,3 +27,7 @@ export const GetFavorites = createSelector(
     getWheatherState,
     state => state.favorites
 );
+export const GetError = createSelector(
+    getWheatherState,
+    state => state.error
+);

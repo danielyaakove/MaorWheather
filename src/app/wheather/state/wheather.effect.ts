@@ -20,7 +20,7 @@ export class WheatherEffects {
     mergeMap((searchText: any) =>
       this.api.searchCity(searchText).pipe(
         map(searchTextResulte => (new wheatherActions.SearchCitySuccess(searchTextResulte))),
-        catchError(err => of(new wheatherActions.SearchCityFail(err)))
+        catchError(err => of(new wheatherActions.ApiCallFail(err)))
       )
     )
   );
@@ -32,7 +32,7 @@ export class WheatherEffects {
     mergeMap((cityKey: any) =>
       this.api.getForeCastByLocationKey(cityKey).pipe(
         map(cityWheather => (new wheatherActions.GetCityWheatherSuccess(cityWheather))),
-        catchError(err => of(new wheatherActions.SearchCityFail(err)))
+        catchError(err => of(new wheatherActions.ApiCallFail(err)))
       )
     )
   );
@@ -44,7 +44,7 @@ export class WheatherEffects {
     mergeMap((cityKey: any) =>
       this.api.getFiveDaysByLocationKey(cityKey).pipe(
         map(cityWheather => (new wheatherActions.Get5DaysWheatherSuccess(cityWheather))),
-        catchError(err => of(new wheatherActions.SearchCityFail(err)))
+        catchError(err => of(new wheatherActions.ApiCallFail(err)))
       )
     )
   );
