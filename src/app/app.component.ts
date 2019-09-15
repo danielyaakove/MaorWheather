@@ -11,19 +11,13 @@ import * as fromWheather from '../app/wheather/state';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'WeatherForecast';
-  searchResult: Subscription;
-  searchResultData: any[];
 
   constructor(private store: Store<fromWheather.State>) { }
 
   ngOnInit() {
     // this.store.dispatch(new wheatherActions.SearchCity('tel'));
-    this.searchResult = this.store.select(fromWheather.getsearchResult).subscribe(data => {
-      this.searchResultData = data;
-    });
   }
 
   ngOnDestroy() {
-    this.searchResult.unsubscribe();
   }
 }

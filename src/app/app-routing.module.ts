@@ -5,7 +5,9 @@ import { FavorietComponent } from './shared/favoriet/favoriet.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'favoriet', component: FavorietComponent}
+  {path: 'favoriet', component: FavorietComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+
 ];
 
 @NgModule({

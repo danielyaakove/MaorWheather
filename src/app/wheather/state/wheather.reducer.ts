@@ -31,7 +31,7 @@ export function reducer(state = initialState, action: WheatherActions): Wheather
           };
     case WheatherActionTypes.GetCityWheatherSuccess:
       return {
-        ...state, currentWheather: action.payload
+        ...state, currentWheather: action.payload[0]
       };
     case WheatherActionTypes.Get5DaysWheatherSuccess:
       return {
